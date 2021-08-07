@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import Header from '../components/Header';
+import classes from './Pages.module.scss';
  
 const HomePage = () => {
     let [quote, setQuote]= useState(null)
@@ -17,11 +18,22 @@ const HomePage = () => {
     }, [])
  
  
-    return <div>
+    return (
+    <div>
         <Header></Header>
-        <h2>{quote}</h2>     
-        <h4>{author}</h4>
-    </div>;
+        <div className={classes.quote}>
+        <blockquote>
+            <p>{quote}</p>     
+            <cite>{author}</cite>
+            </blockquote>
+        </div>
+        <div class={classes.button}>
+            <blockquote>
+            <p>Log new workout</p>
+            </blockquote>
+        </div>
+    </div>
+    );
   }
   
   export default HomePage;

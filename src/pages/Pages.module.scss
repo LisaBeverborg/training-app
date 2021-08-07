@@ -1,0 +1,100 @@
+$bg: #fff;
+
+.quote {
+    display:inline-block;
+    margin:1em;
+    overflow:hidden;
+    blockquote {
+      max-width: 50vw;
+      background-color:$bg;
+      border: solid 2px #757575;
+      display: inline-block;
+      //margin: 0;
+      padding: 1em;
+      position: relative;
+      &:before {
+        background-color: $bg;
+        bottom: -10%;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: -10%;
+        transform: rotate(-15deg) skew(5deg);
+      }
+      cite {
+        display: block;
+        font-style: italic;
+        text-align: right;
+        &:before {
+          content: "- ";
+        }
+      }
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+  
+
+  .button {
+    display:inline-block;
+    margin:1em;
+    
+    overflow:hidden;
+    blockquote {
+      max-width:50vw;
+      background-color:$bg;
+      border: solid 2px #757575;
+      display: inline-block;
+      //margin: 0;
+      padding: 1em;
+      position: relative;
+      &:before {
+        animation:clockwise 30s infinite linear;
+        background-color: $bg;
+        bottom:10%;
+        content: "";
+        left: 0;
+        opacity:.5;
+        position: absolute;
+        right: 0;
+        top:10%;
+      }
+      &:after {
+        animation:counter 30s infinite linear;
+        background-color: $bg;
+        bottom:10%;
+        content: "";
+        left: 0;
+        opacity:.5;
+        position: absolute;
+        right: 0;
+        top:10%;
+      }
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+  
+  @keyframes clockwise {
+    0% {
+      transform:rotate(0);
+    }
+    100% {
+      transform:rotate(360deg);
+    }
+  }
+  
+  @keyframes counter {
+    0% {
+      transform:rotate(0);
+    }
+    100% {
+      transform:rotate(-360deg);
+    }
+  }
+  
