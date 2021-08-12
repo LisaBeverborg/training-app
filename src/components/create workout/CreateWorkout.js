@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from  './CreateWorkout.module.scss'
+import { Link } from 'react-router-dom';
 import Input from './Input/Input';
 
 const CreateWorkout = () => {
@@ -19,11 +19,6 @@ const CreateWorkout = () => {
     nameTouched &&
     repsTouched;
     
-    const addExercise = (newExercise, ) => {
-     // add post function
-     //   return  postExercise(exercise);
-      };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -47,6 +42,11 @@ const CreateWorkout = () => {
         return (
           <div>
             <h1>{name} was successfully uploaded!</h1>
+            <div>
+            <Link to="/training-app/training" onClick={handleReload}>
+            Upload another exercise
+          </Link>
+          </div>
           </div>
         );
       }
@@ -63,13 +63,14 @@ const CreateWorkout = () => {
     <div>
     <h1>Create your new Workout</h1>
     <p>Please fill in the name of the exercises and how many repetitions you made</p>
-    <form className={classes.createWorkout}>
+    <form >
+      <div>
         <Input
             label="Name"
             placeholder="Name of Exercise"
             handleOnChange={setName}
             handleOnBlur={setNameTouched}
-            //className={nameClass}
+            className={nameClass}
             error={nameError}
             />
         <Input
@@ -77,10 +78,11 @@ const CreateWorkout = () => {
             placeholder="Repetitions"
             handleOnChange={setReps}
             handleOnBlur={setRepsTouched}
-            //className={repsClass}
+            className={repsClass}
             error={repsError}
             />
-      <button className={classes.createWorkoutButton}>Save</button>
+            </div>
+      <button type="submit" disabled={!formIsValid} onClick={e=>handleSubmit(e)}>Save</button>
     </form>
     </div>
   );
@@ -94,5 +96,10 @@ const validateName = (name) => {
     return Number(reps) ? ['valid', ''] : ['invalid', "Please enter the number of repetitions"];
   };
 
+
+  const addExercise= (newExercise) => {
+    return "all done"
+     //postExercise(newExercise);
+  };
 
 export default CreateWorkout;
