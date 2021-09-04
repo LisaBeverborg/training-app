@@ -1,11 +1,11 @@
 import React from "react";
-import Header from '../components/Header';
+import NavBar from '../components/navbar/NavBar';
 import CreateWorkout from '../components/create workout/CreateWorkout';
 
 function TrainingPage() {
     return (
         <div>
-            <Header></Header>
+            <NavBar></NavBar>
             <CreateWorkout></CreateWorkout>
         </div>
         );
