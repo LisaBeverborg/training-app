@@ -1,15 +1,18 @@
   .NavBar{
-    background-color: teal;
+    background-color: lightgrey;
     height: 80px;
     width: 100%;
-    position: fixed;
+    /*position: fixed;*/
     z-index: 999;
     opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  .title {
+    font-weight: bold;
+    padding: 20%;
+  }
   .NavBar nav ul{
     list-style: none;
     margin: 0;
@@ -26,8 +29,7 @@
   }
 
   .NavBar a:hover{
-    border-bottom: 5px solid green;
-    border-left: 5px solid green;
+    border-bottom: 2px solid darkgrey;
   }
 
   .NavBar .MobileNavigation{
@@ -35,7 +37,7 @@
   }
 
 
-  @media (max-width: 990px){
+  @media (max-width: 1200px){
     .NavBar .Navigation{
       display: none;
     }
@@ -47,19 +49,20 @@
     }
     .NavBar .MobileNavigation .Hamburger{
       position: absolute;
-      right: 5%;
+      right: 20%;
       cursor: pointer;
     }
     
     .NavBar nav ul{
       display: flex;
       flex-direction: column;
+      
       position: absolute;
       top: 80px;
-      right: 0;
-      width: 100%;
-      background: teal;
-      border-top: 2px solid blue;
+      right: 10%;
+      width: 80%;
+      background: #D3D3D3;
+      border-top: 2px solid darkslategrey;
     }
     .NavBar nav ul li{
       padding-left: 15%;
@@ -71,5 +74,9 @@
     .NavBar a:hover{
       border-bottom: none;
       color: grey;
+    }
+    .title {
+      font-weight: bold;
+      padding: 35%;
     }
   }

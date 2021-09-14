@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 function NavBar(){
     return (
     <header className={classes.NavBar}>
-        <img  src={headerImg} alt="Dumbbell logo"/>
+        <img  className={classes.logo} src={headerImg} alt="Dumbbell logo"/>
         <div className={classes.title}>Let's train</div>
         <MobileNavigation/>
         <Navigation/>
