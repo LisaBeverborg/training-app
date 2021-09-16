@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react";
-import NavBar from '../components/navbar/NavBar';
 import classes from './Pages.module.scss';
  
 const HomePage = () => {
@@ -20,7 +19,6 @@ const HomePage = () => {
  
     return (
     <div>
-        <NavBar></NavBar>
         <div className={classes.quote}>
         <blockquote>
             <p>{quote}</p>     
