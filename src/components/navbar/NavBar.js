@@ -4,10 +4,10 @@ import MobileNavigation from './MobileNavigation';
 import Navigation from './Navigation';
 
 function NavBar(){
-    return (
+    return (    
     <header className={classes.NavBar}>
-        <img  className={classes.logo} src={headerImg} alt="Dumbbell logo"/>
-        <div className={classes.title}>Let's train</div>
+    <img  className={classes.logo} src={headerImg} alt="Dumbbell logo"/>
+        <h1 className={classes.title}>Let's train</h1>
         <MobileNavigation/>
         <Navigation/>
     </header>

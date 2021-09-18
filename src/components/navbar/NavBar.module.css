@@ -1,3 +1,5 @@
+
+  
   .NavBar{
     background-color: lightgrey;
     height: 80px;
@@ -9,10 +11,11 @@
     justify-content: center;
     align-items: center;
   }
-  .title {
-    font-weight: bold;
+ 
+  .title{
     padding: 20%;
   }
+
   .NavBar nav ul{
     list-style: none;
     margin: 0;
@@ -35,7 +38,6 @@
   .NavBar .MobileNavigation{
     display: none;
   }
-
 
   @media (max-width: 1200px){
     .NavBar .Navigation{
