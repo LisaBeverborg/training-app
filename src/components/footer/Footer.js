@@ -1,33 +1,23 @@
-import React from 'react';
-
-
-function Footer () {
-
+import React from "react";
+  
+const Footer = () => {
   return (
-    <section >
-      <section >
-          <section>
-              Let's train AB
-          </section>       
-        <section>
-          <section>
-            letstrain.info@gmail.com
-          </section>
-          <section>
-            Terms and Conditions
-            <br />
-            Copyright
-          </section>
-        </section>     
-          <section >
-            Contact Us
-            <br />
-            FAQ
-        </section>
-      </section>
-    </section>
-  )
-
-}
-
+    <div>
+      <h1>
+        Let's train
+      </h1>
+      <div>
+          <div>
+            <h2>About Us</h2>
+          </div>
+          <div>
+            <h2>Contact Us</h2>
+          </div>
+          <div>
+            <h2>FAQ</h2>
+        </div>
+        </div>
+      </div>
+  );
+};
 export default Footer;
