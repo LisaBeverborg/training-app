@@ -25,7 +25,7 @@ const HomePage = () => {
             <cite>{author}</cite>
             </blockquote>
         </div>
-        <div class={classes.button}>
+        <div className={classes.button}>
             <blockquote>
             <p>Log new workout</p>
             </blockquote>

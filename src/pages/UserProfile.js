@@ -1,5 +1,8 @@
+import Signup from '../components/signup';
 function UserProfilePage() {
-    return <div>User Info</div>;
+    return <div>
+        <Signup/>
+    </div>;
 }
 
 export default UserProfilePage;
