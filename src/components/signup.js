@@ -1,30 +1,35 @@
-import React from "react"
+import React, { useRef } from "react"
 import { Link } from "react-router-dom"
 
 export default function Signup() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
 
-  return (
+    
+    
+    return (
     <>
       <div>
         <div>
           <h2>Sign Up</h2>
-          <div>
-            <div id="email">
+          <form>
+            <label id="email">
               <div >Email</div>
-              <div type="email" required />
-            </div>
-            <div id="password">
+              <input type="email" ref={emailRef} required />
+            </label>
+            <label id="password">
               <div>Password</div>
-              <div type="password" required />
-            </div>
-            <div id="password-confirm">
+              <input type="password" ref={passwordRef} required />
+            </label>
+            <label id="password-confirm">
               <div>Password Confirmation</div>
-              <div type="password" required />
-            </div>
+              <input type="password" ref={passwordConfirmRef}required />
+            </label>
             <button type="submit">
               Sign Up
             </button>
-          </div>
+          </form>
         </div>
       </div>
       <div>
