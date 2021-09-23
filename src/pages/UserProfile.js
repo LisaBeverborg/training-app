@@ -1,11 +1,8 @@
-import Signup from "../components/signup";
-import { AuthProvider } from "../contexts/AuthContext"
+import { Link } from "react-router-dom"
 
 function UserProfilePage() {
     return <div>
-        <AuthProvider>
-        <Signup/>
-        </AuthProvider>
+        <button><Link to="/signup">Sign up</Link></button>
     </div>;
 }
 

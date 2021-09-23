@@ -6,18 +6,23 @@ import UserProfilePage from './pages/UserProfile';
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import './index.css';
+import Signup from './components/signup';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   return (
   <div>
-    <NavBar />
-    <Switch>
-    <Route path='/training-app/' exact><HomePage /></Route>
-    <Route path='/training-app/training'><TrainingPage /></Route>
-    <Route path='/training-app/nutrition'><NutritionPage /></Route>
-    <Route path='/training-app/userprofile'><UserProfilePage /></Route>
-    </Switch>
-    <Footer />
+    <AuthProvider>
+      <NavBar />
+        <Switch>
+          <Route exact path='/'><HomePage /></Route>
+          <Route path='/training'><TrainingPage /></Route>
+          <Route path='/nutrition'><NutritionPage /></Route>
+          <Route path='/userprofile'><UserProfilePage /></Route>
+          <Route path='/signup' ><Signup /></Route>
+        </Switch>
+      <Footer />
+    </AuthProvider>
   </div>
   );
 }
