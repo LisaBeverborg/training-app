@@ -36,7 +36,7 @@ export default function Signup() {
       <div>
         <div>
           <h2>Sign Up</h2>
-          {error && <div>{error}</div>}
+          {error && <p>{error}</p>}
           <form  onSubmit={handleSubmit}>
             <label id="email">
               <div >Email</div>
