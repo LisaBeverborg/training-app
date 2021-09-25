@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer';
 import './index.css';
 import Signup from './components/signup';
 import { AuthProvider } from './contexts/AuthContext';
+import Login from './components/login';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/nutrition'><NutritionPage /></Route>
           <Route path='/userprofile'><UserProfilePage /></Route>
           <Route path='/signup' ><Signup /></Route>
+          <Route path='/login' ><Login /></Route>
         </Switch>
       <Footer />
     </AuthProvider>
