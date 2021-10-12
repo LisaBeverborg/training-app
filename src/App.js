@@ -9,6 +9,7 @@ import './index.css';
 import Signup from './components/signup';
 import { AuthProvider } from './contexts/AuthContext';
 import Login from './components/login';
+import Logout from './components/logout';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/userprofile'><UserProfilePage /></Route>
           <Route path='/signup' ><Signup /></Route>
           <Route path='/login' ><Login /></Route>
+          <Route path='/logout' ><Logout /></Route>
         </Switch>
       <Footer />
     </AuthProvider>
