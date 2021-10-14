@@ -1,25 +1,25 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-export default function Login() {
+export default function ForgotPassword() {
   const emailRef = useRef()
-  const passwordRef = useRef()
-  const { login } = useAuth()
+  const { resetPassword } = useAuth()
   const [error, setError] = useState("")
+  const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
-  const history = useHistory()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     try {
+      setMessage("")
       setError("")
       setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      await resetPassword(emailRef.current.value)
+      setMessage("Check your inbox for further instructions")
     } catch {
-      setError("Failed to log in")
+      setError("Failed to reset password")
     }
 
     setLoading(false)
@@ -28,30 +28,24 @@ export default function Login() {
   return (
     <>
       <div>
-        <div>
-          <h2>Log In</h2>
+          <h2>Password Reset</h2>
           {error && <p>{error}</p>}
+          {message && <p>{message}</p>}
           <form onSubmit={handleSubmit}>
             <label id="email">
               <div>Email</div>
               <input type="email" ref={emailRef} required />
             </label>
-            <label id="password">
-              <div>Password</div>
-              <input type="password" ref={passwordRef} required />
-            </label>
             <button disabled={loading} type="submit">
-              Log In
+              Reset Password
             </button>
           </form>
           <div>
-            <Link to="/forgot-password">Forgot Password?</Link>
+            <Link to="/login">Login</Link>
           </div>
-        </div>
       </div>
       <div>
-        <p>Want to create an account?</p>
-        <Link to="/signup">Sign Up</Link>
+      <Link to="/signup">Sign Up</Link>
       </div>
     </>
   )
