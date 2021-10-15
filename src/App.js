@@ -12,6 +12,7 @@ import Login from './components/login';
 import Logout from './components/logout';
 import ForgotPassword from './components/forgotPassword';
 import PrivateRoute from './components/privateRoute';
+import UpdateProfile from './components/updateProfile';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' ><Login /></Route>
           <Route path='/logout' ><Logout /></Route>
           <Route path='/forgot-password' ><ForgotPassword /></Route>
+          <PrivateRoute path='/update-profile' ><UpdateProfile /></PrivateRoute>
         </Switch>
       <Footer />
     </AuthProvider>
